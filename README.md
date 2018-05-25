@@ -1,5 +1,5 @@
 # intpick
-The integer picker.
+The integer picker. Given a sum find the two numbers that equal it.
 
 `Note: This readme REALLY needs some work.`
 
@@ -14,7 +14,7 @@ curl -X POST \
   http://localhost:8080/intpicker \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -d '{"sum":15,items":[ -5, 1, 5, 6, 10, 21]}'
+  -d '{"sum":15,"items":[ -5, 1, 5, 6, 10, 21]}'
 ```
 
 response.
