@@ -11,18 +11,22 @@ The integer picker. Given a sum find the two numbers that equal it.
 
 ```
 curl -X POST \
-  http://localhost:8080/intpicker \
+  http://localhost:8080/api/intpicker \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -d '{"sum":15,"items":[ -5, 1, 5, 6, 10, 21]}'
+  -d '{"sum":15, "count":2, "items":[ -5, 1, 3, 5, 6, 7, 20, 21]}'
 ```
 
 response.
 
 ```
 {
-    "1": 2,
-    "2": 4
+    "items": [
+        0,
+        6
+    ],
+    "sum": 15,
+    "count": 2
 }
 ```
 
