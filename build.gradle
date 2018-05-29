@@ -51,6 +51,11 @@ jacocoTestReport {
         csv.enabled false
         html.destination file("${buildDir}/jacoco/html")
     }
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: 'org/claytantor/configuration/**')
+        })
+    }
 }
 
 
@@ -60,9 +65,6 @@ targetCompatibility = 1.8
 
 dependencies {
     compile ("org.springframework.boot:spring-boot-starter-web:2.0.2.RELEASE")
-//    compile ("org.springframework.boot:spring-boot-starter-log4j2:2.0.2.RELEASE"){
-//        exclude group: "org.slf4j", module: "slf4j-log4j12"
-//    }
     compile ('io.springfox:springfox-swagger2:2.7.0')
     compile ('io.springfox:springfox-swagger-ui:2.7.0')
     compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
