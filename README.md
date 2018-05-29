@@ -39,3 +39,16 @@ and running
 
 ## swagger UI and Docs
 The service is swagger enabled. Once the service is started you can access the docs at: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+
+## tests and coverage
+
+Running the tests and coverage for junit test reports and jococo can be done with the gradle command:  `./gradlew test jacocoTestReport`
+
+Unit test reports can be found relative to the project with the CLI command: 
+
+`$ open ./build/reports/tests/test/index.html`
+
+and the jacoco reports can be viewed withe CLI:  
+
+`$ open ./build/jacoco/html/index.html`

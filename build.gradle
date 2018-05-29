@@ -22,6 +22,7 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.palantir.docker'
+apply plugin: 'jacoco'
 
 docker {
     dependsOn build
@@ -38,6 +39,20 @@ bootJar {
 repositories {
     mavenCentral()
 }
+
+jacoco {
+    toolVersion = "0.8.1"
+    reportsDir = file("$buildDir/jacoco/reports")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/jacoco/html")
+    }
+}
+
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
