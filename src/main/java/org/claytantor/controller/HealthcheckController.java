@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by claytongraham on 5/24/18.
  */
-@RestController("/healthcheck")
+@RestController
 public class HealthcheckController {
-    @RequestMapping(method=RequestMethod.GET)
+
+    @RequestMapping(method = RequestMethod.GET, value = "/healthcheck")
     public String healthcheck() {
         return "All is well in the world.";
     }

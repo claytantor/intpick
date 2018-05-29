@@ -1,13 +1,15 @@
 package org.claytantor.model;
 
 import com.google.gson.annotations.Expose;
+import io.swagger.annotations.ApiModel;
 
 import java.util.List;
 
 /**
  * Created by claytongraham on 5/24/18.
  */
-public class IntpickerRequest {
+@ApiModel(value = "IntpickerModel", description = "A set of integers to test as a sum.")
+public class IntpickerModel {
 
     @Expose
     private List<Integer> items;
@@ -15,10 +17,22 @@ public class IntpickerRequest {
     @Expose
     private Integer sum;
 
-    public IntpickerRequest(){};
+    @Expose
+    private  Integer count;
 
-    public IntpickerRequest(List<Integer> items, Integer sum) {
+    public IntpickerModel(){};
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public IntpickerModel(List<Integer> items, Integer count, Integer sum) {
         this.items = items;
+        this.count = count;
         this.sum = sum;
     }
 
