@@ -32,3 +32,6 @@ response.
 and running
 
 `docker run -p 8080:8080 -t claytantor/intpicker`
+
+## swagger UI and Docs
+The service is swagger enabled. Once the service is started you can access the docs at: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
